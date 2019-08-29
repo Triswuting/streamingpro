@@ -93,9 +93,11 @@ class RestController extends ApplicationController with WowLog {
   def script = {
     setAccessControlAllowOrigin
     val silence = paramAsBoolean("silence", false)
+    //get spark session by default or user
     val sparkSession = getSession
 
     val htp = findService(classOf[HttpTransportService])
+    //check if has callback func when use async
     if (paramAsBoolean("async", false) && !params().containsKey("callback")) {
       render(400, "when async is set true ,then you should set callback url")
     }

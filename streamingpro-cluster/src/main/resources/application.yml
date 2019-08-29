@@ -5,11 +5,11 @@ production:
   datasources:
     mysql:
       host: 127.0.0.1
-      port: 3306
+      port: 3307
       database: streamingpro_cluster
       username: root
       initialSize: 3
-      password: mlsql
+      password: 123321
       disable: false
     mongodb:
       disable: true
